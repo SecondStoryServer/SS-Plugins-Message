@@ -13,6 +13,7 @@ class PluginMessageTemplateTabList(val playerNameList: List<String>): PluginMess
     }
 
     override val subChannel = SubChannelName
+    override val queue = false
 
     override fun writeTo(dataOutput: ByteArrayDataOutput) {
         dataOutput.writeUTF(playerNameList.joinToString(","))

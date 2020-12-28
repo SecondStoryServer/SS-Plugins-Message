@@ -16,6 +16,7 @@ interface PluginMessageTemplate {
     }
 
     val subChannel: String
+    val queue: Boolean
 
     fun writeTo(dataOutput: ByteArrayDataOutput)
 }
