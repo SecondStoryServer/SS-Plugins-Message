@@ -9,6 +9,7 @@ interface PluginMessageTemplate {
 
         fun readFrom(dataInput: ByteArrayDataInput): PluginMessageTemplate? {
             return when(dataInput.readUTF().toLowerCase()) {
+                PluginMessageTemplateTabList.SubChannelName -> PluginMessageTemplateTabList.readFrom(dataInput)
                 else -> null
             }
         }
