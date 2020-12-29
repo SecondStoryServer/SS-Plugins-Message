@@ -1,4 +1,4 @@
-package com.github.syari.ss.wplugins.core.pluginMessage.template
+package com.github.syari.ss.template.message
 
 import com.google.common.io.ByteArrayDataInput
 import com.google.common.io.ByteArrayDataOutput
