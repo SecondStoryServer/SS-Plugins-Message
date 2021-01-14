@@ -3,7 +3,7 @@ package com.github.syari.ss.template.message
 import com.google.common.io.ByteArrayDataInput
 import com.google.common.io.ByteArrayDataOutput
 
-class PluginMessageTemplateTabList(val playerNameList: List<String>): PluginMessageTemplate {
+class PluginMessageTemplateTabList(val playerNameList: List<String>) : PluginMessageTemplate {
     companion object {
         const val SubChannelName = "tablist"
 
