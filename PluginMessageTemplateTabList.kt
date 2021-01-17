@@ -8,7 +8,7 @@ class PluginMessageTemplateTabList(val playerNameList: List<String>) : PluginMes
         const val SubChannelName = "tablist"
 
         fun readFrom(dataInput: ByteArrayDataInput): PluginMessageTemplateTabList {
-            return PluginMessageTemplateTabList(dataInput.readUTF().split(","))
+            return PluginMessageTemplateTabList(dataInput.readUTFList())
         }
     }
 
@@ -16,6 +16,6 @@ class PluginMessageTemplateTabList(val playerNameList: List<String>) : PluginMes
     override val queue = false
 
     override fun writeTo(dataOutput: ByteArrayDataOutput) {
-        dataOutput.writeUTF(playerNameList.joinToString(","))
+        dataOutput.writeUTFList(playerNameList)
     }
 }

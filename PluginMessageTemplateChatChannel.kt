@@ -10,7 +10,7 @@ class PluginMessageTemplateChatChannel(val task: UpdateTask, val channelName: St
         fun readFrom(dataInput: ByteArrayDataInput): PluginMessageTemplateChatChannel {
             val task = UpdateTask.get(dataInput.readByte())
             val channelName = dataInput.readUTF()
-            val playerNameList = dataInput.readUTF().split(",")
+            val playerNameList = dataInput.readUTFList()
             return PluginMessageTemplateChatChannel(task, channelName, playerNameList)
         }
     }
@@ -32,6 +32,6 @@ class PluginMessageTemplateChatChannel(val task: UpdateTask, val channelName: St
     override fun writeTo(dataOutput: ByteArrayDataOutput) {
         dataOutput.writeByte(task.value.toInt())
         dataOutput.writeUTF(channelName)
-        dataOutput.writeUTF(playerNameList.joinToString(","))
+        dataOutput.writeUTFList(playerNameList)
     }
 }
