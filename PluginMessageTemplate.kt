@@ -10,6 +10,7 @@ interface PluginMessageTemplate {
         fun readFrom(dataInput: ByteArrayDataInput): PluginMessageTemplate? {
             return when (dataInput.readUTF().toLowerCase()) {
                 PluginMessageTemplateTabList.SubChannelName -> PluginMessageTemplateTabList.readFrom(dataInput)
+                PluginMessageTemplateChatChannel.SubChannelName -> PluginMessageTemplateChatChannel.readFrom(dataInput)
                 else -> null
             }
         }
